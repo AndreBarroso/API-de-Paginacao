@@ -11,5 +11,4 @@ app.get('/ping', (req, res) => {
 
 app.post('/pagination', pagination.createArrayWithNumberOfPagination);
 
-
 module.exports = app;
