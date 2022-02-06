@@ -43,3 +43,31 @@ cd API-de-Paginacao
 5. Instale as dependências:
 ```bash
 npm install
+```
+
+6. Inicie a API executando o comando:
+```bash
+npm start
+```
+
+Verifique que no mesmo terminal onde foi feito o comando acima, tem-se a saída da porta em que o servidor está rodando,
+que nesse caso é a 3000. Pronto, agora a API está em execução aguardando as entradas pelo usuário.
+
+## Testando as respostas da API
+É possível usar softwares como POSTMAN e INSOMNIA para as requisições do tipo post. 
+Será mostrado aqui como se faz as requisições usando o comando **curl** do terminal.
+
+Para que a API entregue em sua saída as respostas desejadas , é necessário que se faça uma
+requisção do tipo **POST** com duas entradas no **body** da requisição. São elas **currentPage** e **quantityPages** ,
+**pagina atual** e **quantidade de páginas** respectivamente. Caso alguma das entradas esteja errada,
+uma messagem de erro 400 aparecerá na saída.
+
+- Realizando a requisição usando **curl**:
+  - com a API em execução, abra um segundo terminal
+  - execute o comando a seguir nesse segundo terminal:
+    ```bash
+    curl -d '{ "currentPage": 1, "quantityPages": 10}' -H 'Content-Type: application/json' http://localhost:3000/pagination
+    ```
+    O valores de **currentPage** e **quantityPages** são a sua escolha. É esperado na saída, um array como nos exemplos
+na figura do início deste documento.
+Caso entre com um valor inválido para currentPage ou quantityPages, uma mensagem de erro 400 aparecerár na saída.
