@@ -70,7 +70,7 @@ uma messagem de erro 400 aparecerá na saída.
     ```
     O valores de **currentPage** e **quantityPages** são a sua escolha. É esperado na saída, um array como nos exemplos
 na figura do início deste documento.
-Caso entre com um valor inválido para currentPage ou quantityPages, uma mensagem de erro 400 aparecerár na saída.
+Caso entre com um valor inválido para currentPage ou quantityPages, uma mensagem de erro 400 aparecerá na saída.
 
 ---
 ## Testes automatizados
