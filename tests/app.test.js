@@ -227,6 +227,266 @@ describe(' Testes POST http://localhost:3000/pagination ', () => {
 
 
 
+  describe('Quando são passadas entradas válidas', () => {
+
+    describe('Quando é passado { "currentPage": 3, "quantityPages": 4 }', () => {
+      let response;
+      before(async()=>{
+        response = await chai.request(server)
+        .post('/pagination')
+        .send({"currentPage": 3, "quantityPages": 4});
+
+      });
+
+      after(async()=>{
+        
+      });
+
+      it('retorna código de status "201"', () => {
+        expect(response).to.have.status(201);
+      });
+
+      it('retorna um array', () => {
+        expect(response.body).to.be.an('array');
+      });
+
+      it('o retorno será: ["1", "2", "**3**", "4"]', () => {
+        expect(response.body[0]).to.equal('1');
+        expect(response.body[1]).to.equal('2');
+        expect(response.body[2]).to.equal('**3**');
+        expect(response.body[3]).to.equal('4');
+        expect(response.body[4]).to.equal(undefined);
+      });
+
+    });
+
+    describe('Quando é passado { "currentPage": 1, "quantityPages": 10 }', () => {
+      let response;
+      before(async()=>{
+        response = await chai.request(server)
+        .post('/pagination')
+        .send({"currentPage": 1, "quantityPages": 10});
+
+      });
+
+      after(async()=>{
+        
+      });
+
+      it('retorna código de status "201"', () => {
+        expect(response).to.have.status(201);
+      });
+
+      it('retorna um array', () => {
+        expect(response.body).to.be.an('array');
+      });
+
+      it('o retorno será: ["**1**", "2", "3", "4", "5", "..."]', () => {
+        expect(response.body[0]).to.equal('**1**');
+        expect(response.body[1]).to.equal('2');
+        expect(response.body[2]).to.equal('3');
+        expect(response.body[3]).to.equal('4');
+        expect(response.body[4]).to.equal('5');
+        expect(response.body[5]).to.equal('...');
+      });
+
+    });
+
+    describe('Quando é passado { "currentPage": 2, "quantityPages": 10 }', () => {
+      let response;
+      before(async()=>{
+        response = await chai.request(server)
+        .post('/pagination')
+        .send({"currentPage": 2, "quantityPages": 10});
+
+      });
+
+      after(async()=>{
+        
+      });
+
+      it('retorna código de status "201"', () => {
+        expect(response).to.have.status(201);
+      });
+
+      it('retorna um array', () => {
+        expect(response.body).to.be.an('array');
+      });
+
+      it('o retorno será: ["1", "**2**", "3", "4", "5", "..."]', () => {
+        expect(response.body[0]).to.equal('1');
+        expect(response.body[1]).to.equal('**2**');
+        expect(response.body[2]).to.equal('3');
+        expect(response.body[3]).to.equal('4');
+        expect(response.body[4]).to.equal('5');
+        expect(response.body[5]).to.equal('...');
+      });
+
+    });
+
+    describe('Quando é passado { "currentPage": 3, "quantityPages": 10 }', () => {
+      let response;
+      before(async()=>{
+        response = await chai.request(server)
+        .post('/pagination')
+        .send({"currentPage": 3, "quantityPages": 10});
+
+      });
+
+      after(async()=>{
+        
+      });
+
+      it('retorna código de status "201"', () => {
+        expect(response).to.have.status(201);
+      });
+
+      it('retorna um array', () => {
+        expect(response.body).to.be.an('array');
+      });
+
+      it('o retorno será: ["1", "2", "**3**", "4", "5", "..."]', () => {
+        expect(response.body[0]).to.equal('1');
+        expect(response.body[1]).to.equal('2');
+        expect(response.body[2]).to.equal('**3**');
+        expect(response.body[3]).to.equal('4');
+        expect(response.body[4]).to.equal('5');
+        expect(response.body[5]).to.equal('...');
+      });
+
+    });
+
+
+    describe('Quando é passado { "currentPage": 4, "quantityPages": 10 }', () => {
+      let response;
+      before(async()=>{
+        response = await chai.request(server)
+        .post('/pagination')
+        .send({"currentPage": 4, "quantityPages": 10});
+
+      });
+
+      after(async()=>{
+        
+      });
+
+      it('retorna código de status "201"', () => {
+        expect(response).to.have.status(201);
+      });
+
+      it('retorna um array', () => {
+        expect(response.body).to.be.an('array');
+      });
+
+      it('o retorno será: ["...", "2", "3", "**4**", "5", "6", "..."]', () => {
+        expect(response.body[0]).to.equal('...');
+        expect(response.body[1]).to.equal('2');
+        expect(response.body[2]).to.equal('3');
+        expect(response.body[3]).to.equal('**4**');
+        expect(response.body[4]).to.equal('5');
+        expect(response.body[5]).to.equal('6');
+        expect(response.body[6]).to.equal('...');
+      });
+
+    });
+
+    describe('Quando é passado { "currentPage": 5, "quantityPages": 10 }', () => {
+      let response;
+      before(async()=>{
+        response = await chai.request(server)
+        .post('/pagination')
+        .send({"currentPage": 5, "quantityPages": 10});
+
+      });
+
+      after(async()=>{
+        
+      });
+
+      it('retorna código de status "201"', () => {
+        expect(response).to.have.status(201);
+      });
+
+      it('retorna um array', () => {
+        expect(response.body).to.be.an('array');
+      });
+
+      it('o retorno será: ["...", "3", "4", "**5**", "6", "7", "..."]', () => {
+        expect(response.body[0]).to.equal('...');
+        expect(response.body[1]).to.equal('3');
+        expect(response.body[2]).to.equal('4');
+        expect(response.body[3]).to.equal('**5**');
+        expect(response.body[4]).to.equal('6');
+        expect(response.body[5]).to.equal('7');
+        expect(response.body[6]).to.equal('...');
+      });
+
+    });
+
+
+    describe('Quando é passado { "currentPage": 8, "quantityPages": 10 }', () => {
+      let response;
+      before(async()=>{
+        response = await chai.request(server)
+        .post('/pagination')
+        .send({"currentPage": 8, "quantityPages": 10});
+
+      });
+
+      after(async()=>{
+        
+      });
+
+      it('retorna código de status "201"', () => {
+        expect(response).to.have.status(201);
+      });
+
+      it('retorna um array', () => {
+        expect(response.body).to.be.an('array');
+      });
+
+      it('o retorno será: ["...", "6", "7", "**8**", "9", "10"]', () => {
+        expect(response.body[0]).to.equal('...');
+        expect(response.body[1]).to.equal('6');
+        expect(response.body[2]).to.equal('7');
+        expect(response.body[3]).to.equal('**8**');
+        expect(response.body[4]).to.equal('9');
+        expect(response.body[5]).to.equal('10');
+      });
+
+    });
+
+    describe('Quando é passado { "currentPage": 10, "quantityPages": 10 }', () => {
+      let response;
+      before(async()=>{
+        response = await chai.request(server)
+        .post('/pagination')
+        .send({"currentPage": 10, "quantityPages": 10});
+
+      });
+
+      after(async()=>{
+        
+      });
+
+      it('retorna código de status "201"', () => {
+        expect(response).to.have.status(201);
+      });
+
+      it('retorna um array', () => {
+        expect(response.body).to.be.an('array');
+      });
+
+      it('o retorno será: ["...", "6", "7", "8", "9", "**10**"]', () => {
+        expect(response.body[0]).to.equal('...');
+        expect(response.body[1]).to.equal('6');
+        expect(response.body[2]).to.equal('7');
+        expect(response.body[3]).to.equal('8');
+        expect(response.body[4]).to.equal('9');
+        expect(response.body[5]).to.equal('**10**');
+      });
+
+    });
 
 
 
@@ -236,6 +496,12 @@ describe(' Testes POST http://localhost:3000/pagination ', () => {
 
 
 
+
+
+
+
+
+  });
 
 
 
