@@ -8,7 +8,6 @@ const { expect } = chai;
 
 const server = require('../src/api/app');
 
-
 describe(' Testes POST http://localhost:3000/pagination ', () => {
 
   describe('Quando não são passadas as entradas currentPage e quantityPages', () => {
@@ -487,23 +486,6 @@ describe(' Testes POST http://localhost:3000/pagination ', () => {
       });
 
     });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   });
-
-
-
 });
 
