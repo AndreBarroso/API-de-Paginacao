@@ -71,3 +71,11 @@ uma messagem de erro 400 aparecerá na saída.
     O valores de **currentPage** e **quantityPages** são a sua escolha. É esperado na saída, um array como nos exemplos
 na figura do início deste documento.
 Caso entre com um valor inválido para currentPage ou quantityPages, uma mensagem de erro 400 aparecerár na saída.
+
+---
+## Testes automatizados
+1. Verifique se a API está em execução. Caso esteja, no terminal em que ela está em execução, pressione **crtl c**.
+2. Para rodar os testes execute o comando abaixo: 
+```bash
+npm test
+```
