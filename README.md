@@ -16,6 +16,11 @@ Esse projeto teve como objetivo, desenvolver uma API que trabalha da seguinte fo
 - O exemplo abaixo demonstra as páginas caminhando uma a uma, a partir da página 1 até a 10
 ![exemplo](https://github.com/AndreBarroso/API-de-Paginacao/blob/master/exemplo.jpg)
 
+## Principais tecnologias utilizadas
+
+- Node JS, Mocha, Chai
+---
+
 ## Instruções para executar 
 
 
@@ -70,4 +75,12 @@ uma messagem de erro 400 aparecerá na saída.
     ```
     O valores de **currentPage** e **quantityPages** são a sua escolha. É esperado na saída, um array como nos exemplos
 na figura do início deste documento.
-Caso entre com um valor inválido para currentPage ou quantityPages, uma mensagem de erro 400 aparecerár na saída.
+Caso entre com um valor inválido para currentPage ou quantityPages, uma mensagem de erro 400 aparecerá na saída.
+
+---
+## Testes automatizados
+1. Verifique se a API está em execução. Caso esteja, no terminal em que ela está em execução, pressione **crtl c**.
+2. Para rodar os testes execute o comando abaixo: 
+```bash
+npm test
+```
