@@ -19,7 +19,9 @@ const createArrayWithNumberOfPagination =  ({currentPage, quantityPages}) => {
     generateArrayWithcurrentPageInTheMidle(pages, currentPage, QUANTITY_NUMBERS_TO_SHOW);
   }
 
-  else{generateArrayThatShowParcialStartOrEndPages(pages, currentPage, quantityPages, QUANTITY_NUMBERS_TO_SHOW);}
+  else{
+    generateArrayThatShowParcialStartOrEndPages(pages, currentPage, quantityPages, QUANTITY_NUMBERS_TO_SHOW);
+  }
 
   return pages;
 };
