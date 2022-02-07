@@ -8,10 +8,6 @@ app.use(bodyParser.json());
 
 app.use(cors());
 
-app.get('/ping', (req, res) => {
-  res.status(200).json({ message: 'pong' });
-});
-
 app.post('/pagination', pagination.createArrayWithNumberOfPagination);
 
 const PORT = 3000;
