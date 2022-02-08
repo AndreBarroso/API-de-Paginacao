@@ -4,7 +4,6 @@ const {
   generateArrayWithcurrentPageInTheMidle
 } = require('./utils')
  
-
 const createArrayWithNumberOfPagination =  ({currentPage, quantityPages}) => {
   const QUANTITY_NUMBERS_TO_SHOW = 5;
   let pages = [];

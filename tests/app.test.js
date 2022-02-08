@@ -62,7 +62,7 @@ describe(' Testes POST http://localhost:3000/pagination ', () => {
 
   describe('Quando são passados valores inválidos em currentPage', () => {
 
-    describe('Quando é passado valor não é numérico em currentPage', () => {
+    describe('Quando é passado um valor não numérico em currentPage', () => {
       let response;
       before(async()=>{
         response = await chai.request(server)
@@ -144,10 +144,9 @@ describe(' Testes POST http://localhost:3000/pagination ', () => {
     });
   });
 
-
   describe('Quando são passados valores inválidos em quantityPages', () => {
 
-    describe('Quando é passado valor não é numérico em quantityPages', () => {
+    describe('Quando é passado um valor não numérico em quantityPages', () => {
       let response;
       before(async()=>{
         response = await chai.request(server)
