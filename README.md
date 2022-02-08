@@ -35,7 +35,7 @@ mkdir projeto-andre
 cd projeto-andre
 ```
 
-3. Clone do projeto executando o comando a seguir:
+3. Clone o projeto executando o comando a seguir:
 ```bash
 git clone https://github.com/AndreBarroso/API-de-Paginacao.git
 ```
@@ -79,7 +79,7 @@ Caso entre com um valor inválido para currentPage ou quantityPages, uma mensage
 
 ---
 ## Testes automatizados
-1. Verifique se a API está em execução. Caso esteja, no terminal em que ela está em execução, pressione **crtl c**.
+1. Verifique se a API está em execução. Caso esteja, no terminal em que ela está em execução, finalize-a pressionando **crtl c**.
 2. Para rodar os testes execute o comando abaixo: 
 ```bash
 npm test
